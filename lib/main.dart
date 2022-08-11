@@ -50,7 +50,7 @@ class _CounterWidgetState extends State {
                 children: [
                   Ink(
                     decoration: const ShapeDecoration(
-                      color: Colors.greenAccent,
+                      color: Colors.white60,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(8),
@@ -60,17 +60,59 @@ class _CounterWidgetState extends State {
                         ),
                       ),
                     ),
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _count -= 1;
+                        });
+                      },
+                      icon: const Icon(Icons.remove),
+                      color: Colors.black,
+                    ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.remove),
-                    color: Colors.white,
+                  Ink(
+                      decoration: const ShapeDecoration(
+                        color: Colors.white60,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.zero,
+                            topRight: Radius.zero,
+                            bottomLeft: Radius.zero,
+                            bottomRight: Radius.zero,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(9.5),
+                        child: Text(
+                          '$_count',
+                          style: const TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                      )),
+                  Ink(
+                    decoration: const ShapeDecoration(
+                      color: Colors.white60,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.zero,
+                          topRight: Radius.circular(8),
+                          bottomLeft: Radius.zero,
+                          bottomRight: Radius.circular(8),
+                        ),
+                      ),
+                    ),
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _count += 1;
+                        });
+                      },
+                      icon: const Icon(Icons.add),
+                      color: Colors.black,
+                    ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.add),
-                    color: Colors.white,
-                  )
                 ],
               ),
               const Text(
