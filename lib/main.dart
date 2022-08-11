@@ -74,12 +74,7 @@ class _CounterWidgetState extends State {
                       decoration: const ShapeDecoration(
                         color: Colors.white60,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.zero,
-                            topRight: Radius.zero,
-                            bottomLeft: Radius.zero,
-                            bottomRight: Radius.zero,
-                          ),
+                          borderRadius: BorderRadius.zero,
                         ),
                       ),
                       child: Padding(
